@@ -1,0 +1,49 @@
+.hidden {
+  display: none;
+}
+
+@media screen and (max-width: 767px) {
+  .car-girl {
+    display: none;
+  }
+
+  .link {
+    display: none;
+  }
+}
+
+@media screen and (min-width: 720px) {
+  .h1 {
+    font-size: 49px;
+    position: relative;
+    top: 40px;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .car-girl {
+    position: fixed;
+    width: 175px;
+  }
+
+  .h1 {
+    font-size: 52px;
+    top: 45px;
+  }
+
+  .random {
+    font-size: 35px;
+  }
+}
+
+@media screen and (min-width: 1600px) {
+  .h1 {
+    font-size: 90px;
+    top: 77px;
+  }
+
+  .car-girl {
+    position: fixed;
+    width: 300px;
+  }
+}
