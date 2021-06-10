@@ -1,7 +1,7 @@
 h1 {
   position: relative;
   top: 21px;
-  font-size: 24px;
+  font-size: 28px;
   font-family: 'aclonica', sans-serif;
 }
 
@@ -9,8 +9,23 @@ body {
   background-color: #eae7e7;
 }
 
+.wallpaper {
+  width: 380px;
+  height: 213px;
+  margin: auto;
+  border-radius: 20px;
+  object-fit: cover;
+  object-position: 0 0;
+  margin-top: 5px;
+}
+
 .hidden {
   display: none;
+}
+
+.main-row {
+  flex-wrap: wrap;
+  width: calc(200% / 3);
 }
 
 .row {
@@ -33,12 +48,16 @@ body {
   width: 25%;
 }
 
-.align-center {
-  align-items: center;
+.column-flex {
+  flex-direction: column;
 }
 
-.random {
-  font-size: 25px;
+/* width: 100%;
+  margin: auto;
+  height: 80vh; */
+
+.align-center {
+  align-items: center;
 }
 
 .car-girl {
@@ -51,4 +70,9 @@ body {
 
 .link {
   margin-left: 5px;
+}
+
+.random {
+  font-size: 30px;
+  margin-left: 3px;
 }

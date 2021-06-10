@@ -10,6 +10,14 @@
   .link {
     display: none;
   }
+
+  .wallpaper:nth-child(n + 4) {
+    display: none;
+  }
+
+  .main-row {
+    margin: 15px;
+  }
 }
 
 @media screen and (min-width: 720px) {
@@ -18,32 +26,61 @@
     position: relative;
     top: 40px;
   }
+
+  .random {
+    font-size: 25px;
+  }
 }
 
 @media screen and (min-width: 768px) {
   .car-girl {
-    position: fixed;
+    position: relative;
     width: 175px;
   }
 
   .h1 {
-    font-size: 52px;
-    top: 45px;
+    font-size: 49px;
+    top: 75px;
   }
 
-  .random {
-    font-size: 35px;
+  .link {
+    font-size: 25px;
+  }
+
+  .main-row {
+    margin: auto;
+  }
+}
+
+@media screen and (min-width: 1164px) {
+  .h1 {
+    font-size: 50px;
+    top: 62px;
+  }
+
+  .car-girl {
+    width: 161px;
+    position: relative;
   }
 }
 
 @media screen and (min-width: 1600px) {
   .h1 {
-    font-size: 90px;
-    top: 77px;
+    font-size: 60px;
+    top: 60px;
   }
 
   .car-girl {
-    position: fixed;
-    width: 300px;
+    position: relative;
+    width: 175px;
+    top: 10px;
+  }
+
+  .random {
+    font-size: 35px;
+  }
+
+  .link {
+    font-size: 35px;
   }
 }
