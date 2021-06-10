@@ -1,4 +1,3 @@
-// var $body = document.querySelector('.body');
 var $random = document.querySelector('.random');
 var $row = document.querySelector('.main-row');
 var $randomLink = document.querySelector('.link');
@@ -35,7 +34,7 @@ function generateWallpaperList(wallpaperList) {
 function fetchWallpaperList() {
   destroyChildren($row);
   var xhr = new XMLHttpRequest();
-  xhr.open('GET', 'https://lfz-cors.herokuapp.com/?url=https://wallhaven.cc/api/v1/search?sorting=random&apikey=LHAoACQLxnmilMhVsC3WXRiyGI9OroUe');
+  xhr.open('GET', 'https://lfz-cors.herokuapp.com/?url=https://wallhaven.cc/api/v1/search?sorting=random&apikey=ZwadO7Fe1ydjJA9TqhYGiWxCsvOTeBox');
   xhr.responseType = 'json';
   xhr.addEventListener('load', function () {
     var shuffledWallpapers = shuffle(xhr.response.data);

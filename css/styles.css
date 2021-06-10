@@ -52,10 +52,6 @@ body {
   flex-direction: column;
 }
 
-/* width: 100%;
-  margin: auto;
-  height: 80vh; */
-
 .align-center {
   align-items: center;
 }
@@ -74,5 +70,4 @@ body {
 
 .random {
   font-size: 30px;
-  margin-left: 3px;
 }
