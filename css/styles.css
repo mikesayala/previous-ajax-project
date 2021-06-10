@@ -1,0 +1,71 @@
+h1 {
+  position: relative;
+  top: 21px;
+  font-size: 28px;
+  font-family: 'aclonica', sans-serif;
+}
+
+body {
+  background-color: #eae7e7;
+}
+
+.wallpaper {
+  margin: auto;
+  border-radius: 20px;
+  object-fit: cover;
+  object-position: 0 0;
+  margin-top: 5px;
+}
+
+.hidden {
+  display: none;
+}
+
+.main-row {
+  flex-wrap: wrap;
+  width: 89%;
+}
+
+.row {
+  display: flex;
+}
+
+.header-color {
+  background-color: #dbdbdb;
+}
+
+.column {
+  display: flex;
+}
+
+.column-75 {
+  width: 75%;
+}
+
+.column-fourths {
+  width: 25%;
+}
+
+/* .column-flex {
+  flex-direction: column;
+} */
+
+.align-center {
+  align-items: center;
+}
+
+.car-girl {
+  border-radius: 100%;
+}
+
+.image {
+  justify-content: flex-end;
+}
+
+.link {
+  margin-left: 5px;
+}
+
+.random {
+  font-size: 25px;
+}

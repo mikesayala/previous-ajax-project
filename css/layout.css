@@ -1,0 +1,63 @@
+.hidden {
+  display: none;
+}
+
+@media screen and (max-width: 767px) {
+  .car-girl {
+    display: none;
+  }
+
+  .link {
+    display: none;
+  }
+
+  .wallpaper:nth-child(n + 4) {
+    display: none;
+  }
+
+  .main-row {
+    margin: 15px;
+  }
+}
+
+@media screen and (min-width: 720px) {
+  .h1 {
+    font-size: 49px;
+    position: relative;
+    top: 40px;
+  }
+
+  .random {
+    font-size: 25px;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .car-girl {
+    position: absolute;
+    width: 155px;
+  }
+
+  .h1 {
+    font-size: 49px;
+    top: 38px;
+  }
+
+  .link {
+    font-size: 20px;
+  }
+
+  .main-row {
+    margin: auto;
+  }
+}
+
+@media screen and (min-width: 1600px) {
+  .random {
+    font-size: 35px;
+  }
+
+  .link {
+    font-size: 20px;
+  }
+}
