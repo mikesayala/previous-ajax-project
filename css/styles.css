@@ -10,8 +10,6 @@ body {
 }
 
 .wallpaper {
-  width: 380px;
-  height: 213px;
   margin: auto;
   border-radius: 20px;
   object-fit: cover;
@@ -25,7 +23,7 @@ body {
 
 .main-row {
   flex-wrap: wrap;
-  width: calc(200% / 3);
+  width: 100%;
 }
 
 .row {
@@ -48,9 +46,9 @@ body {
   width: 25%;
 }
 
-.column-flex {
+/* .column-flex {
   flex-direction: column;
-}
+} */
 
 .align-center {
   align-items: center;
@@ -69,5 +67,5 @@ body {
 }
 
 .random {
-  font-size: 30px;
+  font-size: 25px;
 }

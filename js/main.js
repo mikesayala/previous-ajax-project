@@ -2,7 +2,7 @@ var $random = document.querySelector('.random');
 var $row = document.querySelector('.main-row');
 var $randomLink = document.querySelector('.link');
 function randDOMTree(data) {
-  var imageSrc = data.path;
+  var imageSrc = data.thumbs.large;
   var columnFlex = document.createElement('div');
   columnFlex.className = 'column column-flex wallpaper';
 
