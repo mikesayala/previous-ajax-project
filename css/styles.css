@@ -69,3 +69,26 @@ body {
 .random {
   font-size: 25px;
 }
+
+.search {
+  flex-direction: column;
+  border-radius: 50px;
+  border: none;
+}
+
+.search-row {
+  width: 80%;
+}
+
+.justify-end {
+  justify-content: flex-end;
+}
+
+.search-button {
+  border-radius: 5px;
+  border: none;
+  background-color: red;
+  padding: 3px 5px;
+  color: white;
+  margin-top: 1px;
+}
