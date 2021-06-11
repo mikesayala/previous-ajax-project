@@ -46,10 +46,6 @@ body {
   width: 25%;
 }
 
-/* .column-flex {
-  flex-direction: column;
-} */
-
 .align-center {
   align-items: center;
 }
@@ -71,7 +67,6 @@ body {
 }
 
 .search {
-  flex-direction: column;
   border-radius: 50px;
   border: none;
 }

@@ -2,7 +2,6 @@ var $random = document.querySelector('.random');
 var $row = document.querySelector('.main-row');
 var $randomLink = document.querySelector('.link');
 var $searchForm = document.querySelector('.search-form');
-
 function randDOMTree(data) {
   var imageSrc = data.thumbs.large;
   var columnFlex = document.createElement('div');
@@ -72,6 +71,7 @@ function getSearchFormResults(event) {
   if (!event.target.matches('.search-button')) {
     return;
   }
+
   generateSearch($searchForm.search.value);
 }
 

@@ -2,6 +2,38 @@
   display: none;
 }
 
+@media screen and (min-width: 360px) and (max-width: 488px) {
+  body {
+    width: 100%;
+  }
+
+  .wallpaper {
+    max-width: 100%;
+    margin-left: 5px;
+  }
+
+  .h1 {
+    position: relative;
+    top: 21px;
+    font-size: 24px;
+  }
+
+  .main-row {
+    padding-left: 8px;
+  }
+}
+
+@media screen and (min-width: 414px) {
+  body {
+    width: 100%;
+  }
+
+  .wallpaper {
+    max-width: 100%;
+    margin-left: 5px;
+  }
+}
+
 @media screen and (max-width: 767px) {
   .car-girl {
     display: none;
@@ -85,5 +117,23 @@
 
   .search {
     width: 462px;
+  }
+}
+
+@media screen and (min-width: 1942px) {
+  #row {
+    width: 88%;
+  }
+}
+
+@media screen and (min-width: 1964px) {
+  #row {
+    width: 87%;
+  }
+}
+
+@media screen and (min-width: 2400px) {
+  #row {
+    width: 71%;
   }
 }
