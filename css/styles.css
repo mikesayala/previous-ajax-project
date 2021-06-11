@@ -46,10 +46,6 @@ body {
   width: 25%;
 }
 
-/* .column-flex {
-  flex-direction: column;
-} */
-
 .align-center {
   align-items: center;
 }
@@ -68,4 +64,26 @@ body {
 
 .random {
   font-size: 25px;
+}
+
+.search {
+  border-radius: 50px;
+  border: none;
+}
+
+.search-row {
+  width: 80%;
+}
+
+.justify-end {
+  justify-content: flex-end;
+}
+
+.search-button {
+  border-radius: 5px;
+  border: none;
+  background-color: red;
+  padding: 3px 5px;
+  color: white;
+  margin-top: 1px;
 }
