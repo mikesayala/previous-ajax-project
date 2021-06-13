@@ -69,6 +69,7 @@ body {
 .search {
   border-radius: 50px;
   border: none;
+  margin-left: 5px;
 }
 
 .search-row {
@@ -86,4 +87,27 @@ body {
   padding: 3px 5px;
   color: white;
   margin-top: 1px;
+}
+
+.maroon {
+  color: maroon;
+  background-color: maroon;
+  border: none;
+}
+
+.color-button {
+  position: relative;
+  margin-top: 5px;
+}
+
+.background {
+  background-color: bisque;
+  border: none;
+}
+
+.border {
+  border: 1px solid rgb(255, 203, 139);
+  background-color: bisque;
+  position: absolute;
+  width: 240px;
 }

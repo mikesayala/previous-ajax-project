@@ -2,6 +2,9 @@ var $random = document.querySelector('.random');
 var $row = document.querySelector('.main-row');
 var $randomLink = document.querySelector('.link');
 var $searchForm = document.querySelector('.search-form');
+var $color = document.querySelector('.color-square');
+var $border = document.querySelector('.border');
+
 function randDOMTree(data) {
   var imageSrc = data.thumbs.large;
   var columnFlex = document.createElement('div');
@@ -68,13 +71,22 @@ function generateSearch(searchTerm) {
 
 function getSearchFormResults(event) {
   event.preventDefault();
-  if (!event.target.matches('.search-button')) {
-    return;
-  }
-
   generateSearch($searchForm.search.value);
 }
 
-$searchForm.addEventListener('click', getSearchFormResults);
+function activate(button) {
+  button.className = 'border';
+}
+
+// function deactivate(button) {
+//   button.className = 'border hidden';
+// }
+
+function toggleColor(event) {
+  activate($border);
+}
+
+$color.addEventListener('click', toggleColor);
+$searchForm.addEventListener('submit', getSearchFormResults);
 $random.addEventListener('click', fetchWallpaperList);
 $randomLink.addEventListener('click', fetchWallpaperList);
