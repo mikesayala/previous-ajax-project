@@ -4,7 +4,7 @@ var $randomLink = document.querySelector('.link');
 var $searchForm = document.querySelector('.search-form');
 var $color = document.querySelector('.color-square');
 var $border = document.querySelector('.border');
-
+var $input = document.querySelector('.input');
 function randDOMTree(data) {
   var imageSrc = data.thumbs.large;
   var columnFlex = document.createElement('div');
@@ -57,10 +57,10 @@ window.addEventListener('load', function () {
 // When i click the submit button after entering a search term
 // that sends a request to the api to for a search query of the tagname
 
-function generateSearch(searchTerm) {
+function generateSearch(searchTerm, color) {
   destroyChildren($row);
   var xhr = new XMLHttpRequest();
-  xhr.open('GET', 'https://lfz-cors.herokuapp.com/?url=https://wallhaven.cc/api/v1/search?q=' + searchTerm + '&apikey=ZwadO7Fe1ydjJA9TqhYGiWxCsvOTeBox');
+  xhr.open('GET', 'https://lfz-cors.herokuapp.com/?url=https://wallhaven.cc/api/v1/search?q=' + searchTerm + '&colors=' + color + '&apikey=ZwadO7Fe1ydjJA9TqhYGiWxCsvOTeBox');
   xhr.responseType = 'json';
   xhr.addEventListener('load', function () {
     var shuffledWallpapers = shuffle(xhr.response.data);
@@ -71,21 +71,30 @@ function generateSearch(searchTerm) {
 
 function getSearchFormResults(event) {
   event.preventDefault();
-  generateSearch($searchForm.search.value);
+  // console.log($input.value);
+  // console.log($searchForm.search.value);
+  generateSearch($searchForm.search.value, $input.value);
 }
-
-function activate(button) {
-  button.className = 'border';
-}
-
-// function deactivate(button) {
-//   button.className = 'border hidden';
-// }
 
 function toggleColor(event) {
-  activate($border);
+  if ($border.style.display === 'none') {
+    $border.style.display = 'block';
+  } else {
+    $border.style.display = 'none';
+  }
 }
 
+function chooseColor(event) {
+  var dataValue = event.target.getAttribute('data-value');
+  if (!event.target.matches('.background')) {
+    return;
+  }
+  if (event.target.matches('.background')) {
+    $input.value = dataValue;
+  }
+}
+
+window.addEventListener('click', chooseColor);
 $color.addEventListener('click', toggleColor);
 $searchForm.addEventListener('submit', getSearchFormResults);
 $random.addEventListener('click', fetchWallpaperList);
