@@ -60,7 +60,8 @@ window.addEventListener('load', function () {
 function generateSearch(searchTerm, color) {
   destroyChildren($row);
   var xhr = new XMLHttpRequest();
-  xhr.open('GET', 'https://lfz-cors.herokuapp.com/?url=https://wallhaven.cc/api/v1/search?q=' + searchTerm + '&colors=' + color + '&apikey=ZwadO7Fe1ydjJA9TqhYGiWxCsvOTeBox');
+  var url = encodeURIComponent('https://wallhaven.cc/api/v1/search?colors=' + color + '&q=' + searchTerm + '&apikey=ZwadO7Fe1ydjJA9TqhYGiWxCsvOTeBox');
+  xhr.open('GET', 'https://lfz-cors.herokuapp.com/?url=' + url);
   xhr.responseType = 'json';
   xhr.addEventListener('load', function () {
     var shuffledWallpapers = shuffle(xhr.response.data);
@@ -89,9 +90,7 @@ function chooseColor(event) {
   if (!event.target.matches('.background')) {
     return;
   }
-  if (event.target.matches('.background')) {
-    $input.value = dataValue;
-  }
+  $input.value = dataValue;
 }
 
 window.addEventListener('click', chooseColor);
