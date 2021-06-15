@@ -5,6 +5,7 @@ var $searchForm = document.querySelector('.search-form');
 var $color = document.querySelector('.color-square');
 var $border = document.querySelector('.border');
 var $input = document.querySelector('.input');
+
 function randDOMTree(data) {
   var imageSrc = data.thumbs.large;
   var columnFlex = document.createElement('div');
@@ -13,6 +14,15 @@ function randDOMTree(data) {
   var imgOne = document.createElement('img');
   imgOne.setAttribute('src', imageSrc);
   imgOne.className = 'wallpaper';
+
+  var domRow = document.createElement('div');
+  domRow.className = 'row';
+  imgOne.appendChild(domRow);
+  var save = document.createElement('button');
+  save.className = 'save-button';
+  save.innerText = 'Save';
+  columnFlex.appendChild(save);
+
   columnFlex.appendChild(imgOne);
 
   return columnFlex;
