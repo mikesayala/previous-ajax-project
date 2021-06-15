@@ -8,6 +8,7 @@
   <link rel="stylesheet" href="css/reset.css">
   <link rel="stylesheet" href="css/layout.css">
   <link rel="stylesheet" href="css/styles.css">
+  <link rel="stylesheet" href="css/color.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
     integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w=="
     crossorigin="anonymous" referrerpolicy="no-referrer" />
@@ -37,11 +38,48 @@
     <div class="container main-container">
       <div class="row justify-end search-row">
         <div class="column search-column">
+          <div class="dropdown color-button">
+            <button>
+              <i class="fas fa-square color-square"></i>
+            </button>
+            <div class="border hidden">
+              <div class="color lonestar" data-value="660000">color</div>
+              <div class="color red-berry" data-value="990000">color</div>
+              <div class="color guardsman-red" data-value="cc0000">color</div>
+              <div class="color persian-red" data-value="cc3333">color</div>
+              <div class="color french-rose" data-value="ea4c88">color</div>
+              <div class="color plum" data-value="993399">color</div>
+              <div class="color royal-purple" data-value="663399">color</div>
+              <div class="color sapphire" data-value="333399">color</div>
+              <div class="color science-blue" data-value="0066cc">color</div>
+              <div class="color pacific-blue" data-value="0099cc">color</div>
+              <div class="color downy" data-value="66cccc">color</div>
+              <div class="color atlantis" data-value="77cc33">color</div>
+              <div class="color limeade" data-value="669900">color</div>
+              <div class="color verdun-green" data-value="336600">color</div>
+              <div class="color lite-verdun-green" data-value="666600">color</div>
+              <div class="color olive" data-value="999900">color</div>
+              <div class="color earls-green" data-value="cccc33">color</div>
+              <div class="color yellow" data-value="ffff00">color</div>
+              <div class="color sunglow" data-value="ffcc33">color</div>
+              <div class="color orange-peel" data-value="ff9900">color</div>
+              <div class="color blaze-orange" data-value="ff6600">color</div>
+              <div class="color tuscany" data-value="cc6633">color</div>
+              <div class="color potters-clay" data-value="996633">color</div>
+              <div class="color nutmeg-wood-finish" data-value="663300">color</div>
+              <div class="color black" data-value="000000">color</div>
+              <div class="color dusty-gray" data-value="999999">color</div>
+              <div class="color silver" data-value="cccccc">color</div>
+              <div class="color white" data-value="ffffff">color</div>
+              <div class="color gun-powder" data-value="424153">color</div>
+            </div>
+          </div>
           <form class="search-form">
+            <input type="text" value="" class="input hidden">
             <input type="text" name="search" placeholder="search" class="search" id="search">
-            <a href="#">
+            <button class="search-button">
               <i class="fas fa-search search-button" id="search-button" name="button"></i>
-            </a>
+            </button>
           </form>
         </div>
       </div>

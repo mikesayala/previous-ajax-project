@@ -2,6 +2,9 @@ var $random = document.querySelector('.random');
 var $row = document.querySelector('.main-row');
 var $randomLink = document.querySelector('.link');
 var $searchForm = document.querySelector('.search-form');
+var $color = document.querySelector('.color-square');
+var $border = document.querySelector('.border');
+var $input = document.querySelector('.input');
 function randDOMTree(data) {
   var imageSrc = data.thumbs.large;
   var columnFlex = document.createElement('div');
@@ -54,10 +57,11 @@ window.addEventListener('load', function () {
 // When i click the submit button after entering a search term
 // that sends a request to the api to for a search query of the tagname
 
-function generateSearch(searchTerm) {
+function generateSearch(searchTerm, color) {
   destroyChildren($row);
   var xhr = new XMLHttpRequest();
-  xhr.open('GET', 'https://lfz-cors.herokuapp.com/?url=https://wallhaven.cc/api/v1/search?q=' + searchTerm + '&apikey=ZwadO7Fe1ydjJA9TqhYGiWxCsvOTeBox');
+  var url = encodeURIComponent('https://wallhaven.cc/api/v1/search?colors=' + color + '&q=' + searchTerm + '&apikey=ZwadO7Fe1ydjJA9TqhYGiWxCsvOTeBox');
+  xhr.open('GET', 'https://lfz-cors.herokuapp.com/?url=' + url);
   xhr.responseType = 'json';
   xhr.addEventListener('load', function () {
     var shuffledWallpapers = shuffle(xhr.response.data);
@@ -68,13 +72,34 @@ function generateSearch(searchTerm) {
 
 function getSearchFormResults(event) {
   event.preventDefault();
-  if (!event.target.matches('.search-button')) {
-    return;
+  generateSearch($searchForm.search.value, $input.value);
+}
+var clicked = false;
+function toggleColor(event) {
+  if (clicked === false) {
+    clicked = true;
+    $border.classList = 'border';
+  } else {
+    clicked = false;
+    $border.classList = 'hidden';
   }
-
-  generateSearch($searchForm.search.value);
 }
 
-$searchForm.addEventListener('click', getSearchFormResults);
+function chooseColor(event) {
+  var dataValue = event.target.getAttribute('data-value');
+  if (!event.target.matches('.color')) {
+    return;
+  }
+  $input.value = dataValue;
+
+  if (event.target.matches('.color') === clicked) {
+    clicked = true;
+    $border.classList = 'hidden';
+  }
+}
+
+window.addEventListener('click', chooseColor);
+$color.addEventListener('click', toggleColor);
+$searchForm.addEventListener('submit', getSearchFormResults);
 $random.addEventListener('click', fetchWallpaperList);
 $randomLink.addEventListener('click', fetchWallpaperList);
