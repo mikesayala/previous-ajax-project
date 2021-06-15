@@ -72,25 +72,30 @@ function generateSearch(searchTerm, color) {
 
 function getSearchFormResults(event) {
   event.preventDefault();
-  // console.log($input.value);
-  // console.log($searchForm.search.value);
   generateSearch($searchForm.search.value, $input.value);
 }
-
+var clicked = false;
 function toggleColor(event) {
-  if ($border.style.display === 'none') {
-    $border.style.display = 'block';
+  if (clicked === false) {
+    clicked = true;
+    $border.classList = 'border';
   } else {
-    $border.style.display = 'none';
+    clicked = false;
+    $border.classList = 'hidden';
   }
 }
 
 function chooseColor(event) {
   var dataValue = event.target.getAttribute('data-value');
-  if (!event.target.matches('.background')) {
+  if (!event.target.matches('.color')) {
     return;
   }
   $input.value = dataValue;
+
+  if (event.target.matches('.color') === clicked) {
+    clicked = true;
+    $border.classList = 'hidden';
+  }
 }
 
 window.addEventListener('click', chooseColor);

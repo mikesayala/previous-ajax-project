@@ -17,10 +17,6 @@ body {
   margin-top: 5px;
 }
 
-.hidden {
-  display: none;
-}
-
 .main-row {
   flex-wrap: wrap;
   width: 89%;
@@ -95,9 +91,13 @@ body {
   border: none;
 }
 
+.color-square {
+  font-size: 20px;
+}
+
 .color-button {
   position: relative;
-  margin-top: 5px;
+  margin-top: 2px;
 }
 
 .background {
@@ -110,8 +110,10 @@ body {
   background-color: bisque;
   position: absolute;
   width: 240px;
+  display: flex;
+  flex-flow: row wrap;
 }
 
-/* .color {
-
-} */
+.hidden {
+  display: none !important;
+}

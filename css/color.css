@@ -1,0 +1,154 @@
+.color {
+  width: 15%;
+  margin: 5px;
+  border-radius: 3px;
+}
+
+.color:hover {
+  border: 1px solid cyan;
+}
+
+.one {
+  color: #600;
+  background-color: #600;
+}
+
+.two {
+  color: #900;
+  background-color: #900;
+}
+
+.three {
+  color: #c00;
+  background-color: #c00;
+}
+
+.four {
+  color: #c33;
+  background-color: #c33;
+}
+
+.five {
+  color: #ea4c88;
+  background-color: #ea4c88;
+}
+
+.six {
+  color: #939;
+  background-color: #939;
+}
+
+.seven {
+  color: #639;
+  background-color: #639;
+}
+
+.eight {
+  color: #339;
+  background-color: #339;
+}
+
+.nine {
+  color: #06c;
+  background-color: #06c;
+}
+
+.ten {
+  color: #09c;
+  background-color: #09c;
+}
+
+.eleven {
+  color: #6cc;
+  background-color: #6cc;
+}
+
+.twelve {
+  color: #7c3;
+  background-color: #7c3;
+}
+
+.thirteen {
+  color: #690;
+  background-color: #690;
+}
+
+.fourteen {
+  color: #360;
+  background-color: #360;
+}
+
+.fifteen {
+  color: #660;
+  background-color: #660;
+}
+
+.sixteen {
+  color: #990;
+  background-color: #990;
+}
+
+.seventeen {
+  color: #cc3;
+  background-color: #cc3;
+}
+
+.eighteen {
+  color: #ff0;
+  background-color: #ff0;
+}
+
+.nineteen {
+  color: #fc3;
+  background-color: #fc3;
+}
+
+.twenty {
+  color: #f90;
+  background-color: #f90;
+}
+
+.twenty-one {
+  color: #f60;
+  background-color: #f60;
+}
+
+.twenty-two {
+  color: #c63;
+  background-color: #c63;
+}
+
+.twenty-three {
+  color: #963;
+  background-color: #963;
+}
+
+.twenty-four {
+  color: #630;
+  background-color: #630;
+}
+
+.twenty-five {
+  color: #000;
+  background-color: #000;
+}
+
+.twenty-six {
+  color: #999;
+  background-color: #999;
+}
+
+.twenty-seven {
+  color: #ccc;
+  background-color: #ccc;
+}
+
+.twenty-eight {
+  color: #fff;
+  background-color: #fff;
+}
+
+.twenty-nine {
+  color: #424153;
+  background-color: #424153;
+}
