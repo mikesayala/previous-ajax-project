@@ -63,6 +63,14 @@ body {
   margin-left: 5px;
 }
 
+.favorite-link {
+  margin-left: 5px;
+}
+
+.favorite-btn {
+  font-size: 25px;
+}
+
 .random {
   font-size: 25px;
 }

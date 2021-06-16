@@ -5,7 +5,10 @@ var $searchForm = document.querySelector('.search-form');
 var $color = document.querySelector('.color-square');
 var $border = document.querySelector('.border');
 var $input = document.querySelector('.input');
-
+var $favorite = document.querySelector('.favorite-link');
+var $favoriteBtn = document.querySelector('.favorite-btn');
+var $p = document.querySelector('p');
+var $mainContainer = document.querySelector('.main-container');
 function randDOMTree(data) {
   var imageSrc = data.thumbs.large;
   var columnFlex = document.createElement('div');
@@ -108,6 +111,23 @@ function chooseColor(event) {
   }
 }
 
+function activate(p, button) {
+  p.classList.toggle('view');
+  $mainContainer.classList.toggle('hidden');
+}
+
+function deactivate(p, button) {
+  p.classList.toggle('hidden');
+  $mainContainer.classList.toggle('view');
+}
+function toggleFavorites(event) {
+  activate($p, $mainContainer);
+  deactivate($p, $mainContainer);
+
+}
+
+$favoriteBtn.addEventListener('click', toggleFavorites);
+$favorite.addEventListener('click', toggleFavorites);
 window.addEventListener('click', chooseColor);
 $color.addEventListener('click', toggleColor);
 $searchForm.addEventListener('submit', getSearchFormResults);
