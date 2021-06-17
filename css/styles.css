@@ -40,8 +40,8 @@ body {
   display: flex;
 }
 
-.column-75 {
-  width: 75%;
+.column-65 {
+  width: 53%;
 }
 
 .column-fourths {
@@ -88,7 +88,15 @@ body {
 }
 
 .search-row {
-  width: 80%;
+  width: 100%;
+}
+
+.img-row {
+  width: 100%;
+}
+
+.justify-center {
+  justify-content: center;
 }
 
 .justify-end {
@@ -166,5 +174,11 @@ body {
 
 .favorite {
   position: relative;
-  left: 40px;
+  left: 20px;
+}
+
+.fix-row {
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
 }

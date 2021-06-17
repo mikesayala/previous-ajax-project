@@ -10,12 +10,30 @@
 
   .h1 {
     position: relative;
-    top: 21px;
-    font-size: 23px;
+    top: 17px;
+    right: 7px;
+    font-size: 21px;
   }
 
   .main-row {
     padding-left: 8px;
+  }
+
+  .search-row {
+    width: 100%;
+    justify-content: center;
+    background-color: #eae7e7;
+  }
+
+  .favorite {
+    position: relative;
+  }
+}
+
+@media screen and (min-width: 489px) {
+  .search-row {
+    background-color: #eae7e7;
+    justify-content: center;
   }
 }
 
@@ -54,7 +72,7 @@
 
 @media screen and (min-width: 720px) {
   .h1 {
-    font-size: 49px;
+    font-size: 44px;
     position: relative;
     top: 40px;
   }
@@ -65,21 +83,12 @@
 }
 
 @media screen and (min-width: 768px) {
-  .car-girl {
-    position: absolute;
-    width: 155px;
-  }
-
   .h1 {
-    font-size: 49px;
+    font-size: 47px;
     top: 38px;
   }
 
   .link {
-    font-size: 20px;
-  }
-
-  .favorite-link {
     font-size: 20px;
   }
 
@@ -96,6 +105,16 @@
     width: 150px;
     height: 25px;
   }
+
+  .search-row {
+    justify-content: center;
+  }
+}
+
+@media screen and (min-width: 768px) and (max-width: 1841px) {
+  .car-girl {
+    display: none;
+  }
 }
 
 @media screen and (min-width: 918px) {
@@ -107,6 +126,21 @@
 @media screen and (min-width: 1100px) {
   .search {
     width: 350px;
+  }
+
+  .search-row {
+    background-color: #dbdbdb;
+    width: 60%;
+  }
+
+  .h1 {
+    right: 10px;
+  }
+}
+
+@media screen and (min-width: 1375px) {
+  .h1 {
+    top: 71px;
   }
 }
 
@@ -121,6 +155,18 @@
 
   .search {
     width: 462px;
+  }
+
+  .h1 {
+    right: 0;
+  }
+}
+
+@media screen and (min-width: 1842px) {
+  .car-girl {
+    position: absolute;
+    width: 177px;
+    right: 0;
   }
 }
 
