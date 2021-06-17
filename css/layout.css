@@ -11,7 +11,7 @@
   .h1 {
     position: relative;
     top: 21px;
-    font-size: 24px;
+    font-size: 23px;
   }
 
   .main-row {
@@ -36,6 +36,10 @@
   }
 
   .link {
+    display: none;
+  }
+
+  .favorite-link {
     display: none;
   }
 
@@ -72,6 +76,10 @@
   }
 
   .link {
+    font-size: 20px;
+  }
+
+  .favorite-link {
     font-size: 20px;
   }
 

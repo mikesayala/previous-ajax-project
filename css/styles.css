@@ -25,6 +25,7 @@ body {
 .favorite-row {
   flex-wrap: wrap;
   width: 89%;
+  margin: auto;
 }
 
 .row {
@@ -114,12 +115,17 @@ body {
   font-weight: bold;
 }
 
+.save-button:active {
+  color: darkgray;
+  border: 1px white solid;
+}
+
 .delete-button {
   border-radius: 5px;
   border: none;
   background-color: red;
-  padding: 4px 6px;
-  max-width: 15%;
+  padding: 4px 15px;
+  max-width: 23%;
   margin-top: 3px;
   color: white;
   font-weight: bold;
