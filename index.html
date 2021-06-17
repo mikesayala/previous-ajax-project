@@ -18,26 +18,27 @@
 <body>
   <header class="header-color">
    <div class="container">
-    <div class="row">
-      <div class="column column-75">
+    <div class="row fix-row">
+      <div class="column column-65">
         <h1 class="h1">Wallpaper Drive</h1>
       </div>
-      <div class="column align-center column-fourths">
+      <div class="column align-center">
         <a href="#" class="random">
           <i class="fas fa-random random"></i>
         </a>
         <a href="#" class="link">Random</a>
       </div>
+      <div class="column align-center favorite">
+        <a href="#">
+          <i class="fas fa-book favorite-btn"></i>
+        </a>
+        <a href="#" class="favorite-link">Favorites</a>
+      </div>
       <div class="column column-fourths image">
         <img src="images/imgbin-cartoon-illustration-girls-driving-TgdsEYkwLpQqaLXyPBCWpQkVE.jpeg" alt="car girl" class="car-girl">
       </div>
-    </div>
-   </div>
-  </header>
-  <main class="main">
-    <div class="container main-container">
-      <div class="row justify-end search-row">
-        <div class="column search-column">
+      <div class="row search-row">
+        <div class="column">
           <div class="dropdown color-button">
             <button>
               <i class="fas fa-square color-square"></i>
@@ -74,15 +75,24 @@
               <div class="color gun-powder" data-value="424153">color</div>
             </div>
           </div>
-          <form class="search-form">
-            <input type="text" value="" class="input hidden">
-            <input type="text" name="search" placeholder="search" class="search" id="search">
-            <button class="search-button">
-              <i class="fas fa-search search-button" id="search-button" name="button"></i>
-            </button>
-          </form>
         </div>
+        <form class="search-form">
+          <input type="text" value="" class="input hidden">
+          <input type="text" name="search" placeholder="search" class="search" id="search">
+          <button type="submit" class="search-button">
+            <i class="fas fa-search search-button"></i>
+          </button>
+        </form>
       </div>
+    </div>
+   </div>
+  </header>
+  <main class="main">
+    <div class="container favorites-container">
+      <div class="row favorite-row hidden" id="fave-row">
+      </div>
+    </div>
+    <div class="container main-container">
       <div class="row main-row" id="row">
         </div>
       </div>

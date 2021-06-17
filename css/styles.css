@@ -22,6 +22,12 @@ body {
   width: 89%;
 }
 
+.favorite-row {
+  flex-wrap: wrap;
+  width: 89%;
+  margin: auto;
+}
+
 .row {
   display: flex;
 }
@@ -34,12 +40,17 @@ body {
   display: flex;
 }
 
-.column-75 {
-  width: 75%;
+.column-65 {
+  width: 53%;
 }
 
 .column-fourths {
   width: 25%;
+}
+
+.column-flex {
+  flex-direction: column-reverse;
+  flex-wrap: wrap-reverse;
 }
 
 .align-center {
@@ -58,6 +69,14 @@ body {
   margin-left: 5px;
 }
 
+.favorite-link {
+  margin-left: 5px;
+}
+
+.favorite-btn {
+  font-size: 25px;
+}
+
 .random {
   font-size: 25px;
 }
@@ -69,7 +88,15 @@ body {
 }
 
 .search-row {
-  width: 80%;
+  width: 100%;
+}
+
+.img-row {
+  width: 100%;
+}
+
+.justify-center {
+  justify-content: center;
 }
 
 .justify-end {
@@ -80,9 +107,36 @@ body {
   border-radius: 5px;
   border: none;
   background-color: red;
-  padding: 3px 5px;
+  padding: 3px 15px;
   color: white;
   margin-top: 1px;
+}
+
+.save-button {
+  border-radius: 5px;
+  border: none;
+  background-color: red;
+  padding: 4px 6px;
+  max-width: 15%;
+  margin-top: 3px;
+  color: white;
+  font-weight: bold;
+}
+
+.save-button:active {
+  color: darkgray;
+  border: 1px white solid;
+}
+
+.delete-button {
+  border-radius: 5px;
+  border: none;
+  background-color: red;
+  padding: 4px 15px;
+  max-width: 23%;
+  margin-top: 3px;
+  color: white;
+  font-weight: bold;
 }
 
 .maroon {
@@ -116,4 +170,15 @@ body {
 
 .hidden {
   display: none !important;
+}
+
+.favorite {
+  position: relative;
+  left: 20px;
+}
+
+.fix-row {
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
 }
