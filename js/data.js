@@ -1,6 +1,7 @@
 /* exported data */
 var data = {
-  thumbs: []
+  thumbs: [],
+  nextEntryId: 1
 };
 
 window.addEventListener('beforeunload', storage);

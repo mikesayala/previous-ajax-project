@@ -9,6 +9,7 @@ var $favorite = document.querySelector('.favorite-link');
 var $favoriteBtn = document.querySelector('.favorite-btn');
 var $mainContainer = document.querySelector('.main-container');
 var $faveRow = document.querySelector('#fave-row');
+var $favoritesContainer = document.querySelector('.favorites-container');
 
 function randDOMTree(imageSrc) {
   var columnFlex = document.createElement('div');
@@ -116,7 +117,12 @@ function submitWallpaper(event) {
     var parent = event.target.parentElement;
     var img = parent.querySelector('img');
     var srcImg = img.getAttribute('src');
-    data.thumbs.unshift(srcImg);
+    var object = {
+      id: data.nextEntryId,
+      imgSrc: srcImg
+    };
+    data.thumbs.unshift(object);
+    data.nextEntryId++;
   }
 }
 
@@ -139,12 +145,12 @@ function deactivate(row, button) {
   $mainContainer.classList.toggle('view');
 }
 
-function renderFavorites(imageSrc) {
+function renderFavorites(object) {
   var columnFlux = document.createElement('div');
   columnFlux.className = 'column column-flex wallpaper';
 
   var imgOne = document.createElement('img');
-  imgOne.setAttribute('src', imageSrc);
+  imgOne.setAttribute('src', object.imgSrc);
   imgOne.setAttribute('name', 'wallpaper');
   imgOne.className = 'wallpaper wallpaper-image';
 
@@ -164,6 +170,18 @@ function toggleFavorites(event) {
   deactivate($faveRow, $mainContainer);
 }
 
+function deleteWallpaper(event) {
+  if (event.target.matches('.delete-button')) {
+    event.target.closest('div').remove();
+  }
+  for (var i = 0; i < data.thumbs.length; i++) {
+    if (event.target.object === data.nextEntryId[i]) {
+      data.thumbs.splice(i, 1);
+    }
+  }
+}
+
+$favoritesContainer.addEventListener('click', deleteWallpaper);
 document.addEventListener('DOMContentLoaded', entryContentLoaded);
 $mainContainer.addEventListener('click', submitWallpaper);
 $favoriteBtn.addEventListener('click', toggleFavorites);
