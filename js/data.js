@@ -1,7 +1,7 @@
 /* exported data */
 var data = {
   thumbs: [],
-  nextEntryId: 1
+  nextWallpaperId: 1
 };
 
 window.addEventListener('beforeunload', storage);

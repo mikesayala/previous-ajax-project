@@ -118,11 +118,11 @@ function submitWallpaper(event) {
     var img = parent.querySelector('img');
     var srcImg = img.getAttribute('src');
     var object = {
-      id: data.nextEntryId,
+      id: data.nextWallpaperId,
       imgSrc: srcImg
     };
+    data.nextWallpaperId++;
     data.thumbs.unshift(object);
-    data.nextEntryId++;
   }
 }
 
@@ -148,17 +148,15 @@ function deactivate(row, button) {
 function renderFavorites(object) {
   var columnFlux = document.createElement('div');
   columnFlux.className = 'column column-flex wallpaper';
-
   var imgOne = document.createElement('img');
   imgOne.setAttribute('src', object.imgSrc);
   imgOne.setAttribute('name', 'wallpaper');
   imgOne.className = 'wallpaper wallpaper-image';
-
   var $delete = document.createElement('button');
   $delete.className = 'delete-button';
   $delete.innerText = 'Delete';
+  $delete.setAttribute('data-id', object.id);
   columnFlux.appendChild($delete);
-
   columnFlux.appendChild(imgOne);
   return columnFlux;
 }
@@ -171,13 +169,13 @@ function toggleFavorites(event) {
 }
 
 function deleteWallpaper(event) {
-  if (event.target.matches('.delete-button')) {
-    event.target.closest('div').remove();
-  }
-  for (var i = 0; i < data.thumbs.length; i++) {
-    if (event.target.object === data.nextEntryId[i]) {
-      data.thumbs.splice(i, 1);
+  var numId = parseInt(event.target.getAttribute('data-id'));
+  for (var nextWallpaperId = 0; nextWallpaperId < data.thumbs.length; nextWallpaperId++) {
+    if (numId === parseInt(data.thumbs[nextWallpaperId].id)) {
+      data.thumbs.splice(nextWallpaperId, 1);
     }
+  } if (event.target.matches('.delete-button')) {
+    event.target.closest('div').remove();
   }
 }
 
