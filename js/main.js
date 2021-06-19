@@ -10,6 +10,9 @@ var $favoriteBtn = document.querySelector('.favorite-btn');
 var $mainContainer = document.querySelector('.main-container');
 var $faveRow = document.querySelector('#fave-row');
 var $favoritesContainer = document.querySelector('.favorites-container');
+var $mobileColor = document.querySelector('.mobile-color-square');
+var $mobileBorder = document.querySelector('.mobile-border');
+// var $colorBtn = document.querySelector('.color-button');
 
 function randDOMTree(imageSrc) {
   var columnFlex = document.createElement('div');
@@ -99,6 +102,16 @@ function toggleColor(event) {
   }
 }
 
+function mobileColor(event) {
+  if (clicked === false) {
+    clicked = true;
+    $mobileBorder.classList = 'mobile-border';
+  } else {
+    clicked = false;
+    $mobileBorder.classList = 'hidden';
+  }
+}
+
 function chooseColor(event) {
   var dataValue = event.target.getAttribute('data-value');
   if (!event.target.matches('.color')) {
@@ -138,6 +151,8 @@ function activate(row, button) {
   $mainContainer.classList.toggle('hidden');
   $random.classList.toggle('hidden');
   $randomLink.classList.toggle('hidden');
+  $searchForm.classList.toggle('hidden');
+  // $colorBtn.classList.toggle('hidden');
 }
 
 function deactivate(row, button) {
@@ -186,6 +201,7 @@ $favoriteBtn.addEventListener('click', toggleFavorites);
 $favorite.addEventListener('click', toggleFavorites);
 $border.addEventListener('click', chooseColor);
 $color.addEventListener('click', toggleColor);
+$mobileColor.addEventListener('click', mobileColor);
 $searchForm.addEventListener('submit', getSearchFormResults);
 $random.addEventListener('click', fetchWallpaperList);
 $randomLink.addEventListener('click', fetchWallpaperList);

@@ -10,9 +10,8 @@
 
   .h1 {
     position: relative;
-    top: 17px;
-    right: 7px;
-    font-size: 21px;
+    top: 10px;
+    font-size: 20px;
   }
 
   .main-row {
@@ -34,6 +33,11 @@
   .search-row {
     background-color: #eae7e7;
     justify-content: center;
+  }
+
+  .h1 {
+    font-size: 25px;
+    top: 4px;
   }
 }
 
@@ -68,13 +72,17 @@
   .main-row {
     margin: 15px;
   }
+
+  .desktop-form {
+    display: none;
+  }
 }
 
 @media screen and (min-width: 720px) {
   .h1 {
-    font-size: 44px;
+    font-size: 41px;
     position: relative;
-    top: 40px;
+    top: 7px;
   }
 
   .random {
@@ -84,8 +92,8 @@
 
 @media screen and (min-width: 768px) {
   .h1 {
-    font-size: 47px;
-    top: 38px;
+    font-size: 43px;
+    top: 9px;
   }
 
   .link {
@@ -119,13 +127,13 @@
 
 @media screen and (min-width: 918px) {
   .search {
-    width: 250px;
+    width: 205px;
   }
 }
 
 @media screen and (min-width: 1100px) {
   .search {
-    width: 350px;
+    width: 269px;
   }
 
   .search-row {
@@ -135,12 +143,7 @@
 
   .h1 {
     right: 10px;
-  }
-}
-
-@media screen and (min-width: 1375px) {
-  .h1 {
-    top: 71px;
+    font-size: 63px;
   }
 }
 
@@ -151,10 +154,6 @@
 
   .link {
     font-size: 20px;
-  }
-
-  .search {
-    width: 462px;
   }
 
   .h1 {

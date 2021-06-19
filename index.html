@@ -18,32 +18,90 @@
 <body>
   <header class="header-color">
    <div class="container">
-    <div class="row fix-row">
-      <div class="column column-65">
-        <h1 class="h1">Wallpaper Drive</h1>
-      </div>
-      <div class="column align-center">
-        <a href="#" class="random">
-          <i class="fas fa-random random"></i>
-        </a>
-        <a href="#" class="link">Random</a>
-      </div>
-      <div class="column align-center favorite">
-        <a href="#">
-          <i class="fas fa-book favorite-btn"></i>
-        </a>
-        <a href="#" class="favorite-link">Favorites</a>
-      </div>
-      <div class="column column-fourths image">
+     <div class="row relative">
+       <div class="column col-50">
+          <h1 class="h1">Wallpaper Drive</h1>
+       </div>
+       <div class="column col-35 justify-end">
+          <div class="row align-center justify-end">
+            <a href="#" class="random">
+              <i class="fas fa-random random"></i>
+            </a>
+            <a href="#" class="link">Random</a>
+            <a href="#">
+              <i class="fas fa-book favorite-btn"></i>
+            </a>
+            <a href="#" class="favorite-link">Favorites</a>
+          </div>
+          <div class="row desktop-form">
+            <div class="column">
+              <div class="dropdown color-button">
+                <button>
+                  <i class="fas fa-square color-square"></i>
+                </button>
+                <div class="border hidden">
+                  <div class="color lonestar" data-value="660000">color</div>
+                  <div class="color red-berry" data-value="990000">color</div>
+                  <div class="color guardsman-red" data-value="cc0000">color</div>
+                  <div class="color persian-red" data-value="cc3333">color</div>
+                  <div class="color french-rose" data-value="ea4c88">color</div>
+                  <div class="color plum" data-value="993399">color</div>
+                  <div class="color royal-purple" data-value="663399">color</div>
+                  <div class="color sapphire" data-value="333399">color</div>
+                  <div class="color science-blue" data-value="0066cc">color</div>
+                  <div class="color pacific-blue" data-value="0099cc">color</div>
+                  <div class="color downy" data-value="66cccc">color</div>
+                  <div class="color atlantis" data-value="77cc33">color</div>
+                  <div class="color limeade" data-value="669900">color</div>
+                  <div class="color verdun-green" data-value="336600">color</div>
+                  <div class="color lite-verdun-green" data-value="666600">color</div>
+                  <div class="color olive" data-value="999900">color</div>
+                  <div class="color earls-green" data-value="cccc33">color</div>
+                  <div class="color yellow" data-value="ffff00">color</div>
+                  <div class="color sunglow" data-value="ffcc33">color</div>
+                  <div class="color orange-peel" data-value="ff9900">color</div>
+                  <div class="color blaze-orange" data-value="ff6600">color</div>
+                  <div class="color tuscany" data-value="cc6633">color</div>
+                  <div class="color potters-clay" data-value="996633">color</div>
+                  <div class="color nutmeg-wood-finish" data-value="663300">color</div>
+                  <div class="color black" data-value="000000">color</div>
+                  <div class="color dusty-gray" data-value="999999">color</div>
+                  <div class="color silver" data-value="cccccc">color</div>
+                  <div class="color white" data-value="ffffff">color</div>
+                  <div class="color gun-powder" data-value="424153">color</div>
+                </div>
+              </div>
+             </div>
+              <div class="column col-75ths">
+                <form class="search-form">
+                  <input type="text" value="" class="input hidden">
+                  <input type="text" name="search" placeholder="search" class="search" id="search">
+                  <button type="submit" class="search-button">
+                    <i class="fas fa-search search-button"></i>
+                  </button>
+                </form>
+              </div>
+              </div>
+            </div>
+       </div>
+       <div class="column image">
         <img src="images/carGirl.png" alt="car girl" class="car-girl">
+       </div>
+     </div>
+  </header>
+  <main class="main">
+    <div class="container favorites-container">
+      <div class="row favorite-row hidden" id="fave-row">
       </div>
-      <div class="row search-row">
+    </div>
+    <div class="container main-container">
+      <div class="row justify-center mobile-form">
         <div class="column">
           <div class="dropdown color-button">
             <button>
-              <i class="fas fa-square color-square"></i>
+              <i class="fas fa-square mobile-color-square"></i>
             </button>
-            <div class="border hidden">
+            <div class="mobile-border hidden">
               <div class="color lonestar" data-value="660000">color</div>
               <div class="color red-berry" data-value="990000">color</div>
               <div class="color guardsman-red" data-value="cc0000">color</div>
@@ -76,23 +134,16 @@
             </div>
           </div>
         </div>
-        <form class="search-form">
-          <input type="text" value="" class="input hidden">
-          <input type="text" name="search" placeholder="search" class="search" id="search">
-          <button type="submit" class="search-button">
-            <i class="fas fa-search search-button"></i>
-          </button>
-        </form>
+        <div class="column col-75ths">
+          <form class="search-form">
+            <input type="text" value="" class="input hidden">
+            <input type="text" name="search" placeholder="search" class="search">
+            <button type="submit" class="search-button">
+              <i class="fas fa-search search-button"></i>
+            </button>
+          </form>
+        </div>
       </div>
-    </div>
-   </div>
-  </header>
-  <main class="main">
-    <div class="container favorites-container">
-      <div class="row favorite-row hidden" id="fave-row">
-      </div>
-    </div>
-    <div class="container main-container">
       <div class="row main-row" id="row">
         </div>
       </div>
