@@ -1,8 +1,9 @@
 h1 {
   position: relative;
   top: 21px;
-  font-size: 28px;
+  font-size: 90px;
   font-family: 'aclonica', sans-serif;
+  margin: 0;
 }
 
 body {
@@ -59,6 +60,9 @@ body {
 
 .car-girl {
   border-radius: 100%;
+  position: absolute;
+  top: 0;
+  width: 141px;
 }
 
 .image {
@@ -75,6 +79,7 @@ body {
 
 .favorite-btn {
   font-size: 25px;
+  margin-left: 15px;
 }
 
 .random {
@@ -168,6 +173,15 @@ body {
   flex-flow: row wrap;
 }
 
+.mobile-border {
+  border: 1px solid rgb(255, 203, 139);
+  background-color: bisque;
+  position: absolute;
+  width: 240px;
+  display: flex;
+  flex-flow: row wrap;
+}
+
 .hidden {
   display: none !important;
 }
@@ -181,4 +195,44 @@ body {
   flex-direction: row;
   flex-wrap: wrap;
   justify-content: space-evenly;
+}
+
+/* ***************************** */
+
+.relative {
+  position: relative;
+}
+
+.col-50 {
+  width: 50%;
+  margin: 0;
+}
+
+.col-35 {
+  width: 35%;
+  flex-direction: column;
+}
+
+.col-4th {
+  width: 25%;
+}
+
+@media screen and (min-width: 768px) {
+  .mobile-form {
+    display: none;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .desktop-form {
+    display: none;
+  }
+}
+
+.mobile-color-square {
+  font-size: 20px;
+}
+
+.mobile-form {
+  margin-top: 5px;
 }

@@ -9,7 +9,10 @@ var $favorite = document.querySelector('.favorite-link');
 var $favoriteBtn = document.querySelector('.favorite-btn');
 var $mainContainer = document.querySelector('.main-container');
 var $faveRow = document.querySelector('#fave-row');
-
+var $favoritesContainer = document.querySelector('.favorites-container');
+var $mobileColor = document.querySelector('.mobile-color-square');
+var $mobileBorder = document.querySelector('.mobile-border');
+var $searchMobileForm = document.querySelector('.mobile-search');
 function randDOMTree(imageSrc) {
   var columnFlex = document.createElement('div');
   columnFlex.className = 'column column-flex wallpaper';
@@ -87,6 +90,12 @@ function getSearchFormResults(event) {
   generateSearch($searchForm.search.value, $input.value);
 }
 
+function mobileSearchFormResults(event) {
+  destroyChildren($row);
+  event.preventDefault();
+  generateSearch($searchMobileForm.mobile.value, $input.value);
+}
+
 var clicked = false;
 function toggleColor(event) {
   if (clicked === false) {
@@ -95,6 +104,16 @@ function toggleColor(event) {
   } else {
     clicked = false;
     $border.classList = 'hidden';
+  }
+}
+
+function mobileColor(event) {
+  if (clicked === false) {
+    clicked = true;
+    $mobileBorder.classList = 'mobile-border';
+  } else {
+    clicked = false;
+    $mobileBorder.classList = 'hidden';
   }
 }
 
@@ -111,12 +130,30 @@ function chooseColor(event) {
   }
 }
 
+function mobileChooseColor(event) {
+  var mobileDataValue = event.target.getAttribute('data-value');
+  if (!event.target.matches('.mobile-color')) {
+    return;
+  }
+  $input.value = mobileDataValue;
+
+  if (event.target.matches('.mobile-color') === clicked) {
+    clicked = true;
+    $mobileBorder.classList = 'hidden';
+  }
+}
+
 function submitWallpaper(event) {
   if (event.target.parentElement.matches('.column-flex')) {
     var parent = event.target.parentElement;
     var img = parent.querySelector('img');
     var srcImg = img.getAttribute('src');
-    data.thumbs.unshift(srcImg);
+    var object = {
+      id: data.nextWallpaperId,
+      imgSrc: srcImg
+    };
+    data.nextWallpaperId++;
+    data.thumbs.unshift(object);
   }
 }
 
@@ -132,6 +169,7 @@ function activate(row, button) {
   $mainContainer.classList.toggle('hidden');
   $random.classList.toggle('hidden');
   $randomLink.classList.toggle('hidden');
+  $searchForm.classList.toggle('hidden');
 }
 
 function deactivate(row, button) {
@@ -139,20 +177,18 @@ function deactivate(row, button) {
   $mainContainer.classList.toggle('view');
 }
 
-function renderFavorites(imageSrc) {
+function renderFavorites(object) {
   var columnFlux = document.createElement('div');
   columnFlux.className = 'column column-flex wallpaper';
-
   var imgOne = document.createElement('img');
-  imgOne.setAttribute('src', imageSrc);
+  imgOne.setAttribute('src', object.imgSrc);
   imgOne.setAttribute('name', 'wallpaper');
   imgOne.className = 'wallpaper wallpaper-image';
-
   var $delete = document.createElement('button');
   $delete.className = 'delete-button';
   $delete.innerText = 'Delete';
+  $delete.setAttribute('data-id', object.id);
   columnFlux.appendChild($delete);
-
   columnFlux.appendChild(imgOne);
   return columnFlux;
 }
@@ -164,12 +200,28 @@ function toggleFavorites(event) {
   deactivate($faveRow, $mainContainer);
 }
 
+function deleteWallpaper(event) {
+  var numId = parseInt(event.target.getAttribute('data-id'));
+  for (var nextWallpaperId = 0; nextWallpaperId < data.thumbs.length; nextWallpaperId++) {
+    if (numId === parseInt(data.thumbs[nextWallpaperId].id)) {
+      data.thumbs.splice(nextWallpaperId, 1);
+    }
+  } if (event.target.matches('.delete-button')) {
+    event.target.closest('div').remove();
+  }
+}
+
+$favoritesContainer.addEventListener('click', deleteWallpaper);
 document.addEventListener('DOMContentLoaded', entryContentLoaded);
 $mainContainer.addEventListener('click', submitWallpaper);
 $favoriteBtn.addEventListener('click', toggleFavorites);
 $favorite.addEventListener('click', toggleFavorites);
+$mobileBorder.addEventListener('click', chooseColor);
+$mobileBorder.addEventListener('click', mobileChooseColor);
 $border.addEventListener('click', chooseColor);
 $color.addEventListener('click', toggleColor);
+$mobileColor.addEventListener('click', mobileColor);
+$searchMobileForm.addEventListener('submit', mobileSearchFormResults);
 $searchForm.addEventListener('submit', getSearchFormResults);
 $random.addEventListener('click', fetchWallpaperList);
 $randomLink.addEventListener('click', fetchWallpaperList);
