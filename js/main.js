@@ -12,7 +12,7 @@ var $faveRow = document.querySelector('#fave-row');
 var $favoritesContainer = document.querySelector('.favorites-container');
 var $mobileColor = document.querySelector('.mobile-color-square');
 var $mobileBorder = document.querySelector('.mobile-border');
-
+var $searchMobileForm = document.querySelector('.mobile-search');
 function randDOMTree(imageSrc) {
   var columnFlex = document.createElement('div');
   columnFlex.className = 'column column-flex wallpaper';
@@ -90,6 +90,12 @@ function getSearchFormResults(event) {
   generateSearch($searchForm.search.value, $input.value);
 }
 
+function mobileSearchFormResults(event) {
+  destroyChildren($row);
+  event.preventDefault();
+  generateSearch($searchMobileForm.mobile.value, $input.value);
+}
+
 var clicked = false;
 function toggleColor(event) {
   if (clicked === false) {
@@ -121,6 +127,19 @@ function chooseColor(event) {
   if (event.target.matches('.color') === clicked) {
     clicked = true;
     $border.classList = 'hidden';
+  }
+}
+
+function mobileChooseColor(event) {
+  var mobileDataValue = event.target.getAttribute('data-value');
+  if (!event.target.matches('.mobile-color')) {
+    return;
+  }
+  $input.value = mobileDataValue;
+
+  if (event.target.matches('.mobile-color') === clicked) {
+    clicked = true;
+    $mobileBorder.classList = 'hidden';
   }
 }
 
@@ -197,9 +216,12 @@ document.addEventListener('DOMContentLoaded', entryContentLoaded);
 $mainContainer.addEventListener('click', submitWallpaper);
 $favoriteBtn.addEventListener('click', toggleFavorites);
 $favorite.addEventListener('click', toggleFavorites);
+$mobileBorder.addEventListener('click', chooseColor);
+$mobileBorder.addEventListener('click', mobileChooseColor);
 $border.addEventListener('click', chooseColor);
 $color.addEventListener('click', toggleColor);
 $mobileColor.addEventListener('click', mobileColor);
+$searchMobileForm.addEventListener('submit', mobileSearchFormResults);
 $searchForm.addEventListener('submit', getSearchFormResults);
 $random.addEventListener('click', fetchWallpaperList);
 $randomLink.addEventListener('click', fetchWallpaperList);

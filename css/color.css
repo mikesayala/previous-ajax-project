@@ -4,7 +4,17 @@
   border-radius: 3px;
 }
 
+.mobile-color {
+  width: 15%;
+  margin: 5px;
+  border-radius: 3px;
+}
+
 .color:hover {
+  border: 1px solid cyan;
+}
+
+.mobile-color:hover {
   border: 1px solid cyan;
 }
 
