@@ -12,7 +12,6 @@ var $faveRow = document.querySelector('#fave-row');
 var $favoritesContainer = document.querySelector('.favorites-container');
 var $mobileColor = document.querySelector('.mobile-color-square');
 var $mobileBorder = document.querySelector('.mobile-border');
-// var $colorBtn = document.querySelector('.color-button');
 
 function randDOMTree(imageSrc) {
   var columnFlex = document.createElement('div');
@@ -152,7 +151,6 @@ function activate(row, button) {
   $random.classList.toggle('hidden');
   $randomLink.classList.toggle('hidden');
   $searchForm.classList.toggle('hidden');
-  // $colorBtn.classList.toggle('hidden');
 }
 
 function deactivate(row, button) {
